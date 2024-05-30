@@ -15,8 +15,9 @@ Make sure you have:
 
 Within each folder, you will find the following files (substitute *example* in the instructions below appropriately to the example you're working on)
 
-- R functions (each function in one *.R file*) that implement each FaaSr function
+- R functions (each function in one *.R file*), or a link to the repository containing functions
 - an *example.json* configuration file that describes the workflow
+- any other input files needed to run the workflow
 
 You may also download from the [FaaSr tutorial](https://github.com/FaaSr/FaaSr-tutorial) the template *env* file that has Minio Play S3 test credentials pre-configured, and a template for you to enter your GitHub PAT token
 
@@ -25,7 +26,7 @@ You may also download from the [FaaSr tutorial](https://github.com/FaaSr/FaaSr-t
 - Clone this FaaSr-examples repository to your Rstudio session
 - Change into the *example* folder you want to execute
 - Edit *example.json* and substitute <<YOUR_GITHUB_USER_NAME>> with your github account name (e.g. "johndoe")
-- Edit *env* and substitute <<YOUR GITHUB TOKEN>> withy your PAT (e.g. "ghp_XXX.....XXX")
+- Edit *env* and substitute <<YOUR GITHUB TOKEN>> with your PAT (e.g. "ghp_XXX.....XXX")
 - Load the workflow configuration and credentials:
 
 ```
