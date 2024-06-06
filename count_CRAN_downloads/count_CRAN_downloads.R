@@ -34,7 +34,7 @@ count_CRAN_downloads <- function(startdate, enddate, packagename, folder) {
   # the file name is the concatenation of start and end date
   # the contents are the package name and hit count
   outputfile <- paste(startdate,'_',enddate,'.csv',sep="")
-  outputline <- paste(packagename,hitcount,sep=',')
+  outputline <- paste(packagename,startdate,enddate,hitcount,sep=',')
   write(outputline,file=outputfile,append=TRUE)
   # Now upload to S3 and log using FaaSr
   faasr_put_file(local_file=outputfile, remote_folder=folder, remote_file=outputfile)
