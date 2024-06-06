@@ -1,0 +1,38 @@
+{
+    "ComputeServers": {
+        "My_GitHub_Account": {
+            "FaaSType": "GitHubActions",
+            "UserName": "<<YOUR_USER_NAME>>",
+            "ActionRepoName": "count_CRAN_downloads_action",
+            "Branch": "main"
+        }
+    },
+    "DataStores": {
+        "My_Minio_Bucket": {
+            "Endpoint": "https://play.min.io",
+            "Bucket": "faasr",
+            "Region": "",
+            "Writable": "TRUE"
+        }
+    },
+    "FunctionList": {
+        "start": {
+            "FunctionName": "count_CRAN_downloads",
+            "FaaSServer": "My_GitHub_Account",
+            "Arguments": {
+              "folder": "CRAN_downloads",
+              "startdate": "2024-05-01",
+              "enddate": "2024-05-31",
+              "packagename": "FaaSr"
+            }
+        }
+    },
+    "FunctionGitRepo": {
+        "count_CRAN_downloads": "FaaSr/FaaSr-examples/count_CRAN_downloads/count_CRAN_downloads.R"
+    },
+    "FunctionInvoke": "start",
+    "InvocationID": "",
+    "FaaSrLog": "FaaSrLog",
+    "LoggingDataStore": "My_Minio_Bucket",
+    "DefaultDataStore": "My_Minio_Bucket"
+}
