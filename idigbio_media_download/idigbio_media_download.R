@@ -7,6 +7,7 @@ idigbio_media_download <- function(folder, genus) {
 
   # Use ridigbio to download media records into data frame df
   library('ridigbio')
+  options(timeout=360)
   df <- idig_search_media(rq=list(genus=genus),
                         mq=list("data.ac:accessURI"=list("type"="exists")),
                         fields=c("uuid","data.ac:accessURI"), limit=10)
